@@ -1,0 +1,34 @@
+{
+  "name": "@onlymoons-io/onlymoons",
+  "version": "2.0.0",
+  "license": "GPL-3.0+",
+  "author": "OnlyMoons <admin@onlymoons.io>",
+  "repository": {
+    "type": "git",
+    "url": "https://codeberg.org/onlymoons-io/onlymoons-v2.git"
+  },
+  "bugs": "https://codeberg.org/onlymoons-io/onlymoons-v2/issues",
+  "homepage": "https://onlymoons.io/",
+  "private": true,
+  "scripts": {
+    "frontend": "npm -w @onlymoons-io/frontend",
+    "hardhat": "npm -w @onlymoons-io/hardhat"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/hardhat",
+      "**/hardhat/**",
+      "**/hardhat-ts",
+      "**/hardhat-ts/**"
+    ]
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "@onlymoons-io/networks": "^0.0.18"
+  }
+}

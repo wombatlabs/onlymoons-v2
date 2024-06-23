@@ -1,0 +1,27 @@
+{
+  "name": "@onlymoons-io/hardhat",
+  "version": "2.0.0",
+  "license": "GPL-3.0+",
+  "author": "OnlyMoons <admin@onlymoons.io>",
+  "repository": {
+    "type": "git",
+    "url": "https://codeberg.org/onlymoons-io/onlymoons-v2.git",
+    "directory": "packages/hardhat"
+  },
+  "bugs": "https://codeberg.org/onlymoons-io/onlymoons-v2/issues",
+  "homepage": "https://onlymoons.io/",
+  "private": true,
+  "scripts": {
+    "deploy:locker": "npx hardhat ignition deploy ./ignition/modules/TokenLockerV1.ts",
+    "node:local": "npx hardhat node",
+    "test": "npx hardhat test",
+    "test:coverage": "npx hardhat coverage"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.2"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2"
+  }
+}

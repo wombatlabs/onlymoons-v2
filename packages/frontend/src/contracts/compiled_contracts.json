@@ -1,0 +1,813 @@
+{
+  "TokenLockerManagerV1": {
+    "networks": {
+      "1": "0x7BF2f06D65b5C9f146ea79a4eCC7C7cdFC01B613",
+      "4": "0xfe34847eF7bD06c0c67454344C571eD68CFf63f9",
+      "25": "0x016c1D8cf86f60A5382BA5c42D4be960CBd1b868",
+      "56": "0x016c1D8cf86f60A5382BA5c42D4be960CBd1b868",
+      "97": "0x67f5b7f5Ed623De0F57AE53B6801812Ad73b5d66",
+      "109": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "122": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "123": "0x695C4825C25dd354eCC393eDF092Ac61d50E5B61",
+      "137": "0x016c1D8cf86f60A5382BA5c42D4be960CBd1b868",
+      "169": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "196": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "204": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "314": "0x84a6ee8D28e322DD40B1988F06e2c58E943fE0a9",
+      "369": "0x695C4825C25dd354eCC393eDF092Ac61d50E5B61",
+      "588": "0x8DEE2F1768ed500FA9e0598378C6e8F18DAB07D6",
+      "592": "0x016c1D8cf86f60A5382BA5c42D4be960CBd1b868",
+      "1030": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "1088": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "2000": "0x016c1D8cf86f60A5382BA5c42D4be960CBd1b868",
+      "2001": "0x016c1D8cf86f60A5382BA5c42D4be960CBd1b868",
+      "4200": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "5000": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "7000": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "7700": "0xA70765C0428d1f9BE926e2C64b93823aa1646Efe",
+      "8453": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "10001": "0xA70765C0428d1f9BE926e2C64b93823aa1646Efe",
+      "42161": "0x016c1D8cf86f60A5382BA5c42D4be960CBd1b868",
+      "43114": "0x016c1D8cf86f60A5382BA5c42D4be960CBd1b868",
+      "59144": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "80001": "0x016c1D8cf86f60A5382BA5c42D4be960CBd1b868",
+      "81457": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "534352": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "7777777": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "20202021": "0x7BF2f06D65b5C9f146ea79a4eCC7C7cdFC01B613",
+      "245022934": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "666666666": "0x77110f67C0EF3c98c43570BADe06046eF6549876"
+    },
+    "abi": [
+      {
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "oldOwner",
+            "type": "address"
+          },
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "newOwner",
+            "type": "address"
+          }
+        ],
+        "name": "OwnershipTransferred",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "uint40",
+            "name": "id",
+            "type": "uint40"
+          },
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "token0",
+            "type": "address"
+          },
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "token1",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "createdBy",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "balance",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint40",
+            "name": "unlockTime",
+            "type": "uint40"
+          }
+        ],
+        "name": "TokenLockerCreated",
+        "type": "event"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "tokenAddress_",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount_",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint40",
+            "name": "unlockTime_",
+            "type": "uint40"
+          }
+        ],
+        "name": "createTokenLocker",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "creationEnabled",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint40",
+            "name": "id_",
+            "type": "uint40"
+          }
+        ],
+        "name": "getLpData",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "hasLpData",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint40",
+            "name": "id",
+            "type": "uint40"
+          },
+          {
+            "internalType": "address",
+            "name": "token0",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token1",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance0",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance1",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "price0",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "price1",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint40",
+            "name": "id_",
+            "type": "uint40"
+          }
+        ],
+        "name": "getTokenLockAddress",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint40",
+            "name": "id_",
+            "type": "uint40"
+          }
+        ],
+        "name": "getTokenLockData",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "isLpToken",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint40",
+            "name": "id",
+            "type": "uint40"
+          },
+          {
+            "internalType": "address",
+            "name": "contractAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "lockOwner",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "createdBy",
+            "type": "address"
+          },
+          {
+            "internalType": "uint40",
+            "name": "createdAt",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint40",
+            "name": "unlockTime",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalSupply",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "address_",
+            "type": "address"
+          }
+        ],
+        "name": "getTokenLockersForAddress",
+        "outputs": [
+          {
+            "internalType": "uint40[]",
+            "name": "",
+            "type": "uint40[]"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint40",
+            "name": "id_",
+            "type": "uint40"
+          },
+          {
+            "internalType": "address",
+            "name": "newOwner_",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "previousOwner_",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "createdBy_",
+            "type": "address"
+          }
+        ],
+        "name": "notifyLockerOwnerChange",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bool",
+            "name": "value_",
+            "type": "bool"
+          }
+        ],
+        "name": "setCreationEnabled",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "tokenLockerCount",
+        "outputs": [
+          {
+            "internalType": "uint40",
+            "name": "",
+            "type": "uint40"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "newOwner_",
+            "type": "address"
+          }
+        ],
+        "name": "transferOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      }
+    ]
+  },
+  "TokenLockerV1": {
+    "abi": [
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "manager_",
+            "type": "address"
+          },
+          {
+            "internalType": "uint40",
+            "name": "id_",
+            "type": "uint40"
+          },
+          {
+            "internalType": "address",
+            "name": "owner_",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "tokenAddress_",
+            "type": "address"
+          },
+          {
+            "internalType": "uint40",
+            "name": "unlockTime_",
+            "type": "uint40"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          }
+        ],
+        "name": "Deposited",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "uint40",
+            "name": "newUnlockTime",
+            "type": "uint40"
+          }
+        ],
+        "name": "Extended",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "oldOwner",
+            "type": "address"
+          },
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "newOwner",
+            "type": "address"
+          }
+        ],
+        "name": "OwnershipTransferred",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [],
+        "name": "Withdrew",
+        "type": "event"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "amount_",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint40",
+            "name": "newUnlockTime_",
+            "type": "uint40"
+          }
+        ],
+        "name": "deposit",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getIsLpToken",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getLockData",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "isLpToken",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint40",
+            "name": "id",
+            "type": "uint40"
+          },
+          {
+            "internalType": "address",
+            "name": "contractAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "lockOwner",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "createdBy",
+            "type": "address"
+          },
+          {
+            "internalType": "uint40",
+            "name": "createdAt",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint40",
+            "name": "unlockTime",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalSupply",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getLpData",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "hasLpData",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint40",
+            "name": "id",
+            "type": "uint40"
+          },
+          {
+            "internalType": "address",
+            "name": "token0",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token1",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance0",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance1",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "price0",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "price1",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "newOwner_",
+            "type": "address"
+          }
+        ],
+        "name": "transferOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "withdraw",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "withdrawEth",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "address_",
+            "type": "address"
+          }
+        ],
+        "name": "withdrawToken",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "stateMutability": "payable",
+        "type": "receive"
+      }
+    ]
+  },
+  "Util": {
+    "networks": {
+      "1": "0x8BF6Fa865f15887a95d3aF202Ab34ed0C754a2dE",
+      "4": "0xC6d6ef837cBc41293C0b32a322EDE83749817C05",
+      "25": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "56": "0x8BF6Fa865f15887a95d3aF202Ab34ed0C754a2dE",
+      "97": "0x82CD31c0a0de621b52ee80f8f14d55Ffd5cb734A",
+      "109": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "122": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "123": "0x58E77ae66F74dEe08F0A73E29996856ffc7b5B80",
+      "137": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "169": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "196": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "204": "0x80531d9bae23ffc04105a58e3771ffe10f86de11",
+      "314": "0x016c1D8cf86f60A5382BA5c42D4be960CBd1b868",
+      "369": "0x58E77ae66F74dEe08F0A73E29996856ffc7b5B80",
+      "588": "0x67be50aCd00883C9E85539b88aABE7697d607576",
+      "592": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "1030": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "1088": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "2000": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "2001": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "4200": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "5000": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "7000": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "7700": "0x7BF2f06D65b5C9f146ea79a4eCC7C7cdFC01B613",
+      "8453": "0x80531d9bae23ffc04105a58e3771ffe10f86de11",
+      "10001": "0x7BF2f06D65b5C9f146ea79a4eCC7C7cdFC01B613",
+      "42161": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "43114": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "59144": "0x80531d9bae23ffc04105a58e3771ffe10f86de11",
+      "80001": "0x77110f67C0EF3c98c43570BADe06046eF6549876",
+      "81457": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "534352": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "7777777": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "20202021": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "245022934": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11",
+      "666666666": "0x80531d9bAE23fFc04105a58E3771FFe10F86de11"
+    },
+    "abi": [
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "address_",
+            "type": "address"
+          }
+        ],
+        "name": "getLpData",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "token0",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token1",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance0",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance1",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "price0",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "price1",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "address_",
+            "type": "address"
+          }
+        ],
+        "name": "getTokenData",
+        "outputs": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "symbol",
+            "type": "string"
+          },
+          {
+            "internalType": "uint8",
+            "name": "decimals",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "balance",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "address_",
+            "type": "address"
+          }
+        ],
+        "name": "isLpToken",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ]
+  }
+}

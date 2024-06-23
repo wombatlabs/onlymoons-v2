@@ -1,0 +1,21 @@
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  /*-moz-osx-font-smoothing: grayscale;*/
+  -webkit-text-size-adjust: 100%;
+}
+
+.font-default, .font-display, :root {
+  font-family: 'Red Hat Display', Avenir, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.font-text {
+  font-family: 'Red Hat Text', Avenir, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.font-mono, pre, code {
+  font-family: 'Red Hat Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
